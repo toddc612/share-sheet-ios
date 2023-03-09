@@ -13,8 +13,10 @@ export class HelloWorldModel extends Observable {
     this.updateMessage()
 
     // Let's share something in iOS.
+    const image = ImageSource.fromFileSync("~/images/social.png")
+
     const activityController = UIActivityViewController.alloc()
-      .initWithActivityItemsApplicationActivities(["Text to share"], null);
+      .initWithActivityItemsApplicationActivities([image], null);
 
     const presentViewController = activityController.popoverPresentationController;
     if (presentViewController) {
